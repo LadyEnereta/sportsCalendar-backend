@@ -13,7 +13,11 @@ connectDB();
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+    origin: "https://le-sport-calendar-frontend.vercel.app/", // Replace with your actual Vercel URL
+    credentials: true
+  }));
+  
 app.use(express.json());
 
 app.use('/api/fixtures', fixtureRoutes);
